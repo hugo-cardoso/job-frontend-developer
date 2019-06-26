@@ -22,9 +22,6 @@ import {
 const SearchBar = () => {
   const dispatch = useDispatch();
   const query = useSelector(state => state.query);
-  const artistInfos = useSelector(state => state.artist_infos);
-
-  console.log(artistInfos);
 
   const search = () => {
     searchVideo(query)

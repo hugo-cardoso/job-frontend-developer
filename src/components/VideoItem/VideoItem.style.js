@@ -44,7 +44,7 @@ const ContentInfo = styled.div`
   flex-direction: column;
 `;
 
-const Channel = styled.a`
+const Channel = styled.span`
   font-family: 'Roboto', sans-serif;
   font-size: 13px;
   color: #606060;

@@ -23,7 +23,7 @@ const VideoList = ({videos}) => {
             } = video.snippet;
 
             return (
-              <ListItem>
+              <ListItem key={ videoId }>
                 <VideoItem 
                   title={title}
                   description={description}
