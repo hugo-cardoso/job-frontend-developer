@@ -27,9 +27,9 @@ const VideoItem = ({
         <Thumbnail src={thumbnail}/>
       </ThumbnailWrapper>
       <ContentInfo>
-        <Title>{ title }</Title>
+        <Title dangerouslySetInnerHTML={{__html: title}} />
         <Channel>{ channelTitle }</Channel>
-        <Description>{ description }</Description>
+        <Description dangerouslySetInnerHTML={{__html: description}} />
       </ContentInfo>
     </Wrapper>
   )
