@@ -5,7 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { 
   updateVideos,
   updateQuery,
-  updateArtistInfo
+  updateArtistInfo,
+  updateLoading
 } from '../../actions/SearchActions';
 
 import Icon from '@mdi/react'
@@ -28,6 +29,7 @@ const SearchBar = () => {
     searchVideo(query)
     .then(res => {
       dispatch(updateVideos(res.items));
+      dispatch(updateLoading(false));
     });
     searchAttractions(query)
     .then(res => {
@@ -40,6 +42,7 @@ const SearchBar = () => {
     inputSearch.current.blur();
     dispatch(updateArtistInfo({}));
     dispatch(updateVideos([]));
+    dispatch(updateLoading(true));
     search();
   }
 

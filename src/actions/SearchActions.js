@@ -13,8 +13,14 @@ const updateArtistInfo = infos => ({
   infos:!Object.keys(infos).includes('_embedded') ? null : infos["_embedded"]["attractions"][0]
 });
 
+const updateLoading = loading => ({
+  type: 'UPDATE_LOADING',
+  loading
+});
+
 export {
   updateVideos,
   updateQuery,
-  updateArtistInfo
+  updateArtistInfo,
+  updateLoading
 };

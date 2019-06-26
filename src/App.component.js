@@ -6,6 +6,7 @@ import { getLargestImage, getSocialUrl } from './helpers/TicketMasterHelpers';
 import SearchBar from './components/SearchBar/SearchBar.component';
 import VideoList from './components/VideoList/VideoList.component';
 import ArtistInfos from './components/ArtistInfos/ArtistInfos.component';
+import Loading from './components/Loading/Loading.component';
 import {
   GlobalStyle,
   View,
@@ -15,6 +16,7 @@ import {
 const App = () => {
   const videos = useSelector(state => state.videos);
   const artist_infos = useSelector(state => state.artist_infos);
+  const isLoading = useSelector(state => state.loading);
 
   return (
     <>
@@ -32,7 +34,11 @@ const App = () => {
               />
             )
           }
-          <VideoList videos={videos}/>
+          { 
+            isLoading
+            ? <Loading />
+            : <VideoList videos={videos}/>
+          }
         </Container>
       </View>
     </>

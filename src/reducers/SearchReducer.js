@@ -1,7 +1,8 @@
 const initialState = {
   videos: [],
   query: '',
-  artist_infos: {}
+  artist_infos: {},
+  loading: false
 }
 
 const SearchReducer = (state = initialState, action) => {
@@ -12,6 +13,8 @@ const SearchReducer = (state = initialState, action) => {
       return { ...state, query: action.query };
     case 'UPDATE_ARTIST_INFOS':
       return { ...state, artist_infos: action.infos };
+    case 'UPDATE_LOADING':
+      return { ...state, loading: action.loading };
     default: {
       return state;
     }
