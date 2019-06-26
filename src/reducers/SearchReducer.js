@@ -1,6 +1,7 @@
 const initialState = {
   videos: [],
-  query: ''
+  query: '',
+  artist_infos: null
 }
 
 const SearchReducer = (state = initialState, action) => {
@@ -8,7 +9,9 @@ const SearchReducer = (state = initialState, action) => {
     case 'UPDATE_VIDEOS':
       return { ...state, videos: action.videos };
     case 'UPDATE_QUERY':
-        return { ...state, query: action.query };
+      return { ...state, query: action.query };
+    case 'UPDATE_ARTIST_INFOS':
+      return { ...state, artist_infos: action.infos };
     default: {
       return state;
     }

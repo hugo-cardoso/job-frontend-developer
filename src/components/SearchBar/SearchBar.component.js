@@ -4,7 +4,8 @@ import { searchAttractions } from '../../services/TicketMasterService';
 import { useDispatch, useSelector } from 'react-redux';
 import { 
   updateVideos,
-  updateQuery
+  updateQuery,
+  updateArtistInfo
 } from '../../actions/SearchActions';
 
 import Icon from '@mdi/react'
@@ -21,6 +22,9 @@ import {
 const SearchBar = () => {
   const dispatch = useDispatch();
   const query = useSelector(state => state.query);
+  const artistInfos = useSelector(state => state.artist_infos);
+
+  console.log(artistInfos);
 
   const search = () => {
     searchVideo(query)
@@ -29,7 +33,7 @@ const SearchBar = () => {
     });
     searchAttractions(query)
     .then(res => {
-      console.log(res);
+      dispatch(updateArtistInfo(res));
     });
   }
 
