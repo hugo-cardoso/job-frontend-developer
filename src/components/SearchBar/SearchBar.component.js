@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createRef } from 'react';
 import { searchVideo } from '../../services/YoutubeService';
 import { searchAttractions } from '../../services/TicketMasterService';
 import { useDispatch, useSelector } from 'react-redux';
@@ -22,6 +22,7 @@ import {
 const SearchBar = () => {
   const dispatch = useDispatch();
   const query = useSelector(state => state.query);
+  const inputSearch = createRef();
 
   const search = () => {
     searchVideo(query)
@@ -36,6 +37,8 @@ const SearchBar = () => {
 
   const handleFormSubmit = event => {
     if( event ) event.preventDefault();
+    inputSearch.current.blur();
+    dispatch(updateArtistInfo({}));
     dispatch(updateVideos([]));
     search();
   }
@@ -61,6 +64,8 @@ const SearchBar = () => {
             )
           }
           <Input
+            ref={inputSearch}
+            spellcheck={false}
             placeholder="Search..."
             lenght={ query.length }
             onChange={event => handleChangeQuery(event)}

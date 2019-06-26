@@ -1,7 +1,7 @@
 const initialState = {
   videos: [],
   query: '',
-  artist_infos: null
+  artist_infos: {}
 }
 
 const SearchReducer = (state = initialState, action) => {

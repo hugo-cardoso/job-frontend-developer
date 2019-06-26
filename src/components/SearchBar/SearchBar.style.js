@@ -21,11 +21,12 @@ const Form = styled.form`
 const InputWrapper = styled.div`
   width: auto;
   max-width: 100%;
+  height: 55px;
   display: flex;
 `;
 
 const Input = styled.input`
-  width: ${ ({lenght}) => lenght ? `${(lenght * 25)}px` : '175px' };
+  width: ${ ({lenght}) => lenght ? `${(lenght * 35)}px` : '230px' };
   max-width: 100%;
   height: 100%;
   text-align: center;
@@ -35,6 +36,7 @@ const Input = styled.input`
   color: #000;
   border: 0;
   flex: 1;
+  padding: 0;
 
   :focus {outline: none;}
 
@@ -47,7 +49,7 @@ const Input = styled.input`
 
 const ClearButton = styled.div`
   width: 50px;
-  height: 50px;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,7 +68,7 @@ const ClearButton = styled.div`
 
 const SearchIcon = styled.div`
   width: 50px;
-  height: 50px;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

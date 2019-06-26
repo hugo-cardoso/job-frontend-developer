@@ -15,7 +15,7 @@ import {
 const App = () => {
   const videos = useSelector(state => state.videos);
   const artist_infos = useSelector(state => state.artist_infos);
-  
+
   return (
     <>
       <GlobalStyle />
@@ -23,7 +23,7 @@ const App = () => {
         <SearchBar />
         <Container>
           {
-            !!artist_infos && (
+            !!(artist_infos && Object.keys(artist_infos).includes('externalLinks') ) && (
               <ArtistInfos
                 backgroundImage={ getLargestImage(artist_infos["images"]) }
                 youtubeUrl={ getSocialUrl('youtube', artist_infos["externalLinks"]) }
