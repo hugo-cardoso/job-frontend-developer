@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import {
+  searchVideo
+} from '../../services/YoutubeService';
 import Icon from '@mdi/react'
 import { mdiClose, mdiMagnify } from '@mdi/js'
 import {
@@ -16,6 +19,8 @@ const SearchBar = () => {
 
   const search = () => {
     console.log(`search ${ query }`);
+    searchVideo(query)
+      .then(res => console.log(res));
   }
 
   const handleFormSubmit = event => {
