@@ -8,6 +8,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #FFF;
 `;
 
 const Form = styled.form`

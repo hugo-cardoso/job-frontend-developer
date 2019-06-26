@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Title = styled.h3`
   font-family: 'Roboto', sans-serif;
-  color: #000;
+  color: #FFF;
   font-size: 18px;
 
   @media screen and (max-width: 768px) {

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ticketMasterLogo from '../../images/ticketmaster_logo.svg';
-import youtubeLogo from '../../images/youtube_logo.svg';
+import youtubeLogo from '../../images/youtube_logo.png';
 
 import {
   Wrapper,
