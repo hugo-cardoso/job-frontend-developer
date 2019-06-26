@@ -11,7 +11,19 @@ const View = styled.div`
   height: 100vh;
 `;
 
+const Container = styled.div`
+  width: 768px;
+  max-width: 100%;
+  margin: auto;
+  box-sizing: border-box;
+  
+  @media screen and (max-width: 768px) {
+    padding: 0 15px;
+  }
+`;
+
 export {
   GlobalStyle,
-  View
+  View,
+  Container
 };
