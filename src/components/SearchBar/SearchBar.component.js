@@ -1,5 +1,6 @@
 import React from 'react';
 import { searchVideo } from '../../services/YoutubeService';
+import { searchAttractions } from '../../services/TicketMasterService';
 import { useDispatch, useSelector } from 'react-redux';
 import { 
   updateVideos,
@@ -25,6 +26,10 @@ const SearchBar = () => {
     searchVideo(query)
     .then(res => {
       dispatch(updateVideos(res.items));
+    });
+    searchAttractions(query)
+    .then(res => {
+      console.log(res);
     });
   }
 
