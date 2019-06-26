@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
-import {
-  searchVideo
-} from '../../services/YoutubeService';
+import React from 'react';
+import { searchVideo } from '../../services/YoutubeService';
+import { useDispatch, useSelector } from 'react-redux';
+import { 
+  updateVideos,
+  updateQuery
+} from '../../actions/SearchActions';
+
 import Icon from '@mdi/react'
 import { mdiClose, mdiMagnify } from '@mdi/js'
 import {
@@ -14,26 +18,28 @@ import {
 } from './SearchBar.style';
 
 const SearchBar = () => {
-
-  const [query, setQuery] = useState('');
+  const dispatch = useDispatch();
+  const query = useSelector(state => state.query);
 
   const search = () => {
-    console.log(`search ${ query }`);
     searchVideo(query)
-      .then(res => console.log(res));
+    .then(res => {
+      dispatch(updateVideos(res.items));
+    });
   }
 
   const handleFormSubmit = event => {
     if( event ) event.preventDefault();
+    dispatch(updateVideos([]));
     search();
   }
 
   const handleChangeQuery = event => {
     const text = event.target.value;
-    setQuery(text);
+    dispatch(updateQuery(text));
   }
 
-  const clearQuery = () => setQuery('');
+  const clearQuery = () => dispatch(updateQuery(''));
 
   return (
     <Wrapper>

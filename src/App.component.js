@@ -1,4 +1,6 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+
 import SearchBar from './components/SearchBar/SearchBar.component';
 import VideoList from './components/VideoList/VideoList.component';
 import {
@@ -8,6 +10,7 @@ import {
 } from './App.style';
 
 const App = () => {
+  const videos = useSelector(state => state.videos);
 
   return (
     <>
@@ -15,7 +18,7 @@ const App = () => {
       <View>
         <SearchBar />
         <Container>
-          <VideoList videos={[]}/>
+          <VideoList videos={videos}/>
         </Container>
       </View>
     </>
