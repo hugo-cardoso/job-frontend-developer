@@ -7,6 +7,7 @@ import SearchBar from './components/SearchBar/SearchBar.component';
 import VideoList from './components/VideoList/VideoList.component';
 import ArtistInfos from './components/ArtistInfos/ArtistInfos.component';
 import Loading from './components/Loading/Loading.component';
+import PoweredBy from './components/PoweredBy/PoweredBy.component';
 import {
   GlobalStyle,
   View,
@@ -39,6 +40,7 @@ const App = () => {
             ? <Loading />
             : <VideoList videos={videos}/>
           }
+          <PoweredBy />
         </Container>
       </View>
     </>
