@@ -1,6 +1,6 @@
 ## Job Frontend Developer
 
-Clique [aqui](https://tunadao1.github.io/job-frontend-developer), para visualizar a aplicação rodando.
+Clique [aqui](https://hugo-cardoso.github.io/job-frontend-developer), para visualizar a aplicação rodando.
 
 ### Executar localmente
 
